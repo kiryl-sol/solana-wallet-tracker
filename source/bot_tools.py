@@ -19,14 +19,15 @@ BOT_TOKEN = config.BOT_TOKEN
 TOKEN = BOT_TOKEN
 HELIUS_KEY = config.HELIUS_KEY
 HELIUS_WEBHOOK_URL = config.HELIUS_WEBHOOK_URL
+HELIUS_WEBHOOK_ID = config.HELIUS_WEBHOOK_ID
 
 client = MongoClient(MONGODB_URI)
 db = client.sol_wallets
 wallets_collection = db.wallets_test
 
-def get_webhook():
+def get_webhook(HELIUS_WEBHOOK_ID):
     # Get current webhook from Helius. We can use one webhook to track all addresse
-    url = f"https://api.helius.xyz/v0/webhooks/{webhook_id}?api-key={HELIUS_KEY}"
+    url = f"https://api.helius.xyz/v0/webhooks/{HELIUS_WEBHOOK_ID}?api-key={HELIUS_KEY}"
     r = requests.get(url)
     if r.status_code == 200:
         return True, r.json()['webhookID'], r.json()['accountAddresses']
