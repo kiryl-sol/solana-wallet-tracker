@@ -1,3 +1,6 @@
+# Try it
+You can try Solana Wallet tracker here: https://t.me/solana_notify_bot
+
 # How to run
 1. Install all requirements from requirements.txt
 2. Copy-paste EXAMPLE_config.py in "source", rename to "config.py" and add your Helius key, Helius webhook url (you need to create the first one manually using their dev portal), MONGODB_URI connection string to your Mongo DB, Telegram bot token (using Bot Farther bot on Telegram)
