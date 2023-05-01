@@ -26,10 +26,10 @@ wallets_collection = db.wallets_test
 
 def get_webhook():
     # Get current webhook from Helius. We can use one webhook to track all addresse
-    url = f'https://api.helius.xyz/v0/webhooks?api-key={HELIUS_KEY}'
+    url = f"https://api.helius.xyz/v0/webhooks/{webhook_id}?api-key={HELIUS_KEY}"
     r = requests.get(url)
     if r.status_code == 200:
-        return True, r.json()[0]['webhookID'], r.json()[0]['accountAddresses']
+        return True, r.json()['webhookID'], r.json()['accountAddresses']
     else:
         logging.info('error get webhook')
         return False
