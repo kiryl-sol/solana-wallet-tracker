@@ -1,0 +1,7 @@
+__pycache__/
+source/__pycache__/
+venv/
+source/config.py
+bot.log
+wallet.log
+.DS_Store
