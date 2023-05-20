@@ -173,7 +173,7 @@ def create_message(data):
                 message = message.replace(user_wallet, f'*YOUR WALLET* ({formatted_user_wallet})')
 
         formatted_text = re.sub(r'[A-Za-z0-9]{32,44}', format_wallet_address, message)
-        formatted_text = formatted_text + f'\n[Link to XRAY](https://xray.helius.xyz/tx/{tx})'
+        formatted_text = formatted_text + f'\n[XRAY](https://xray.helius.xyz/tx/{tx}) | [Solscan](https://solscan.io/tx/{tx})'
         formatted_text = formatted_text.replace("#", "").replace("_", " ")
         messages.append({'user': user, 'text': formatted_text, 'image': image})
     return messages
